@@ -1,7 +1,7 @@
 import { Sprite } from "./classes/sprite.js";
 import createPlayer from "./utils/createPlayer.js";
 import createEnemy from "./utils/createEnemy.js";
-import { keys } from "./utils/keyboards.js";
+import createEventListeners from "./utils/keyboards.js";
 import { descreaseTimer } from "./utils/timer.js";
 import { gameOver, checkGameOver } from "./utils/gameEnd.js";
 import {
@@ -12,15 +12,16 @@ import {
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 const background = new Sprite({
+  ctx,
   imgSrc: "../assets/background/background.jpg",
   position: { x: 0, y: 0 },
 });
+const player = createPlayer(ctx);
+const enemy = createEnemy(ctx);
 
-const player = createPlayer();
-const enemy = createEnemy();
+const keys = createEventListeners(player, enemy);
 
 function animate() {
   window.requestAnimationFrame(animate);
@@ -106,7 +107,7 @@ function animate() {
   }
 
   // Check GameOver
-  checkGameOver();
+  checkGameOver(player, enemy, "Player 1 Wins", "Player 2 Wins");
 }
 
 descreaseTimer();
