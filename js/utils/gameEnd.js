@@ -9,7 +9,6 @@ function checkGameOver() {
     clearInterval(timerId);
 
     const gameResultText = document.getElementById("gameResult");
-
     if (timer === 0) {
       gameResultText.innerText = "Tie";
     } else if (player.health <= 0) {
@@ -17,6 +16,9 @@ function checkGameOver() {
     } else {
       gameResultText.innerText = "Player Wins";
     }
+
+    const playAgainText = document.getElementById("playAgain");
+    playAgainText.innerText = "Play Again";
   }
 }
 

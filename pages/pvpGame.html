@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="../assets/favicon/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Chicken Combat is a thrilling fighting
+      game where you play as a chicken, battling against mushroom monsters and
+      other enemies."
+    />
+    <title>Chicken Combat</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="canvas__container">
+      <h1 id="gameResult"></h1>
+      <a id="playAgain" href="/index.html"></a>
+      <div class="game__header">
+        <div class="health">
+          <div id="player__health" class="player__health"></div>
+        </div>
+        <div id="timer" class="timer">60</div>
+        <div class="health">
+          <div id="enemy__health" class="enemy__health"></div>
+        </div>
+      </div>
+      <canvas id="canvas" width="1280" height="720"></canvas>
+    </div>
+
+    <script src="../js/game.js" type="module"></script>
+    <script src="../js/utils/keyboards.js" type="module"></script>
+  </body>
+</html>
