@@ -1,7 +1,6 @@
-import { ctx } from "../game.js";
-
 class Sprite {
   constructor({
+    ctx,
     position,
     imgSrc,
     scale = 1,
@@ -13,6 +12,7 @@ class Sprite {
     framesRightToLeft = false,
     imgOffset = { x: 0, y: 0 },
   }) {
+    this.ctx = ctx;
     this.imgOffset = imgOffset;
     this.position = position;
     this.width = 50;
@@ -29,7 +29,7 @@ class Sprite {
   }
 
   drawAnimationTopToDown() {
-    ctx.drawImage(
+    this.ctx.drawImage(
       this.image,
       0,
       this.framesCurrent * (this.image.height / this.frameMax),
@@ -43,7 +43,7 @@ class Sprite {
   }
 
   drawAnimationLeftToRight() {
-    ctx.drawImage(
+    this.ctx.drawImage(
       this.image,
       this.framesCurrent * (this.image.width / this.frameMax),
       0,
@@ -57,7 +57,7 @@ class Sprite {
   }
 
   drawAnimationRightToLeft() {
-    ctx.drawImage(
+    this.ctx.drawImage(
       this.image,
       (this.frameMax - this.framesCurrent - 1) *
         (this.image.width / this.frameMax),

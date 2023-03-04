@@ -4,6 +4,7 @@ const gravity = 0.13;
 
 class Fighter extends Sprite {
   constructor({
+    ctx,
     position,
     velocity,
     isEnemy = false,
@@ -19,6 +20,7 @@ class Fighter extends Sprite {
     attackAnimationTime = 200,
   }) {
     super({
+      ctx,
       imgOffset,
       position,
       imgSrc,

@@ -1,7 +1,8 @@
 import { Fighter } from "../classes/fighter.js";
 
-const createEnemy = () => {
+const createEnemy = (ctx) => {
   return new Fighter({
+    ctx,
     isEnemy: true,
     attackAnimationTime: 550,
     position: { x: 1100, y: 100 },

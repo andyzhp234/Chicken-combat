@@ -1,7 +1,8 @@
 import { Fighter } from "../classes/fighter.js";
 
-const createPlayer = () => {
+const createPlayer = (ctx) => {
   return new Fighter({
+    ctx,
     isEnemy: false,
     position: { x: 100, y: 0 },
     velocity: { x: 0, y: 0 },
