@@ -6,7 +6,7 @@ import movementAnimations from "./utils/movement/animations/movementAnimations.j
 import movementPhysics from "./utils/movement/physics/movementPhysics.js";
 import { descreaseTimer } from "./utils/timer/index.js";
 import { checkGameOver } from "./utils/gameEnd/index.js";
-import checkReceivedAttack from "./utils/Attack/checkReceivedAttack.js";
+import checkReceivedAttack from "./utils/attack/checkReceivedAttack.js";
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
