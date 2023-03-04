@@ -4,6 +4,8 @@ import createPlayer2 from "./utils/createPlayer2.js";
 import createEventListeners from "./utils/keyboards/index.js";
 import movementAnimations from "./utils/movement/animations/movementAnimations.js";
 import movementPhysics from "./utils/movement/physics/movementPhysics.js";
+import AIMovementPhysics from "./utils/movement/physics/AIMovementPhysics.js";
+import AIMovementAnimation from "./utils/movement/animations/AIMovementAnimation.js";
 import { descreaseTimer } from "./utils/timer/index.js";
 import { checkGameOver } from "./utils/gameEnd/index.js";
 import checkReceivedAttack from "./utils/attack/checkReceivedAttack.js";
@@ -37,8 +39,8 @@ function animate() {
   movementPhysics({ player: player1, keys, isPlayer2: false });
 
   // player2 Update Movement Animations & Physics
-  movementAnimations({ player: player2, keys, isPlayer2: true });
-  movementPhysics({ player: player2, keys, isPlayer2: true });
+  AIMovementAnimation({ player: player2 });
+  AIMovementPhysics({ player: player2 });
 
   // check if player2 received attack
   checkReceivedAttack({
