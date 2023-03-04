@@ -63,7 +63,7 @@ html {
   border: 4px solid white;
 }
 
-.player__health {
+.player1-health {
   position: absolute;
   right: 0;
   background-color: blue;
@@ -72,7 +72,7 @@ html {
   transition: width 0.5s ease-out;
 }
 
-.enemy__health {
+.player2-health {
   position: absolute;
   left: 0;
   background-color: blue;

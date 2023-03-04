@@ -1,4 +1,4 @@
-function createEventListeners(player, enemy) {
+function createEventListeners(player1, player2) {
   const keys = {
     a: { pressed: false },
     d: { pressed: false },
@@ -8,7 +8,7 @@ function createEventListeners(player, enemy) {
   };
 
   window.addEventListener("keydown", (event) => {
-    if (!player.dead) {
+    if (!player1.dead) {
       switch (event.key) {
         case "d":
           keys["d"].pressed = true;
@@ -17,14 +17,14 @@ function createEventListeners(player, enemy) {
           keys["a"].pressed = true;
           break;
         case "w":
-          player.jump();
+          player1.jump();
           break;
         case " ":
-          player.attack();
+          player1.attack();
           break;
       }
     }
-    if (!enemy.dead) {
+    if (!player2.dead) {
       switch (event.key) {
         case "ArrowRight":
           keys["ArrowRight"].pressed = true;
@@ -33,10 +33,10 @@ function createEventListeners(player, enemy) {
           keys["ArrowLeft"].pressed = true;
           break;
         case "ArrowUp":
-          enemy.jump();
+          player2.jump();
           break;
         case "Enter":
-          enemy.attack();
+          player2.attack();
           break;
       }
     }

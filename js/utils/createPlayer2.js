@@ -1,6 +1,6 @@
 import { Fighter } from "../classes/fighter.js";
 
-const createEnemy = (ctx) => {
+const createPlayer2 = (ctx) => {
   return new Fighter({
     ctx,
     isEnemy: true,
@@ -45,4 +45,4 @@ const createEnemy = (ctx) => {
   });
 };
 
-export default createEnemy;
+export default createPlayer2;

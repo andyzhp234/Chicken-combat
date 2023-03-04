@@ -55,7 +55,7 @@ function animate() {
   });
 
   // Check GameOver
-  checkGameOver(player1, player2, "Player 1 Wins", "Player 2 Wins");
+  checkGameOver(player1, player2, "You Won", "AI Won");
 }
 
 descreaseTimer();
