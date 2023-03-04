@@ -1,5 +1,4 @@
 import { Sprite } from "./sprite.js";
-import { ctx } from "../game.js";
 
 const gravity = 0.13;
 

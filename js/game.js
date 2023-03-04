@@ -1,5 +1,6 @@
 import { Sprite } from "./classes/sprite.js";
-import { Fighter } from "./classes/fighter.js";
+import createPlayer from "./utils/createPlayer.js";
+import createEnemy from "./utils/createEnemy.js";
 import { keys } from "./utils/keyboards.js";
 import { descreaseTimer } from "./utils/timer.js";
 import { gameOver, checkGameOver } from "./utils/gameEnd.js";
@@ -18,95 +19,14 @@ const background = new Sprite({
   position: { x: 0, y: 0 },
 });
 
-const player = new Fighter({
-  isEnemy: false,
-  position: { x: 100, y: 0 },
-  velocity: { x: 0, y: 0 },
-  imgOffset: { x: -10, y: 6 },
-  imgSrc: "../assets/character/ChikBoy/ChikBoy_idle.png",
-  scale: 4,
-  frameMax: 6,
-  framesTopToDown: true,
-  sprites: {
-    idle: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_idle.png",
-      frameMax: 6,
-    },
-    run: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_run.png",
-      frameMax: 10,
-    },
-    jump: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_jump.png",
-      frameMax: 6,
-    },
-    fall: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_fall.png",
-      frameMax: 6,
-    },
-    attack1: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_attack_1.png",
-      frameMax: 5,
-    },
-    take_dmg: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_take_damage.png",
-      frameMax: 4,
-    },
-    death: {
-      imgSrc: "../assets/character/ChikBoy/ChikBoy_death_1.png",
-      frameMax: 8,
-    },
-  },
-});
-
-const enemy = new Fighter({
-  isEnemy: true,
-  attackAnimationTime: 550,
-  position: { x: 1100, y: 100 },
-  velocity: { x: 0, y: 0 },
-  imgOffset: { x: -68, y: -50 },
-  scale: 3,
-  frameMax: 4,
-  framesRightToLeft: true,
-  imgSrc: "../assets/character/Mushroom/Idle.png",
-  sprites: {
-    idle: {
-      imgSrc: "../assets/character/Mushroom/Idle.png",
-      frameMax: 4,
-    },
-    run: {
-      imgSrc: "../assets/character/Mushroom/Run.png",
-      frameMax: 8,
-    },
-    jump: {
-      imgSrc: "../assets/character/Mushroom/Idle.png",
-      frameMax: 4,
-    },
-    fall: {
-      imgSrc: "../assets/character/Mushroom/Idle.png",
-      frameMax: 4,
-    },
-    attack1: {
-      imgSrc: "../assets/character/Mushroom/Attack.png",
-      frameMax: 8,
-    },
-    take_dmg: {
-      imgSrc: "../assets/character/Mushroom/Take_damage.png",
-      frameMax: 4,
-    },
-    death: {
-      imgSrc: "../assets/character/Mushroom/Death.png",
-      frameMax: 4,
-    },
-  },
-});
+const player = createPlayer();
+const enemy = createEnemy();
 
 function animate() {
   window.requestAnimationFrame(animate);
 
   // clear the canvas
-  ctx.fillStyle = "black";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // draw & update the player position
   background.update();
