@@ -118,22 +118,34 @@ html {
 
 .menu {
   margin-top: 25px;
-  width: 300px;
-  height: 65px;
-  color: black;
-  border: 3px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 192px;
+  height: 64px;
+  color: white;
   cursor: pointer;
-  font-weight: 800;
   z-index: 10;
   transition: transform 0.1s ease-in-out;
   text-decoration: none;
+  position: relative;
 }
 
 .menu:hover {
   transform: translateY(5px);
+}
+
+.menu h1 {
+  text-align: center;
+  font-size: xx-small;
+  width: 100%;
+  font-weight: 800;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.wood-button {
+  width: 192px;
+  height: 64px;
 }
 
 .instruction_box {
